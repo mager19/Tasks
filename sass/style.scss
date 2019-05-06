@@ -1,0 +1,128 @@
+//variables
+$light: #34314f;
+$secondary: #f34573;
+$txt: #00334e;
+$blanco: #f9f9f9;
+
+body{
+    color:$txt;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-primary{
+    background-color: $secondary;
+    border:none;
+    color:$blanco;
+    font-size: 0.9rem;
+    width: 100%;;
+}
+
+
+h1{
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header{
+    background-color: $light; 
+    color:$blanco;
+    padding: 1rem; 
+}
+
+.conteo__tareas{
+    background-color: $secondary;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 5px 10px;
+    margin: 0 auto;
+    max-width: 300px;
+
+    h4{
+        font-size: 0.9rem;
+        color:$blanco;
+        margin-bottom: 0;
+    }
+}
+
+.app{
+    margin: 4rem 0;
+
+    .formulario{
+        background-color: rgba(200, 230, 245, 0.4);
+        border-bottom: 2px solid $secondary;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        
+    }
+
+    .tareas{
+        background-color: rgba(200, 230, 245, 0.4);
+        border-bottom: 2px solid $secondary;
+        color:$txt;
+        min-height: 70vh;
+        padding: 2rem;        
+    }
+
+    .terminados{
+        background-color: rgba(73, 190, 183, 0.2);
+        border-bottom: 2px solid $secondary;
+        color:$txt;
+        height: 25vh;
+        overflow-y: scroll;
+        margin-top: 2rem;
+        padding: 2rem; 
+    }
+
+    .item{
+        border-left:3px solid $light;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+
+        p{
+            text-align: justify;
+            width: 80%;
+        }
+
+        i{
+            background-color: #eaeaea;
+            border-radius: 50%;
+            color:$light;
+            font-size: 1rem;
+            padding: 7px;
+
+            transition: all ease 0.5s;
+
+            &.closes-icon:hover{
+                background-color: $secondary;
+                color:$blanco;
+            }
+
+            &.check-icon:hover{
+                background-color: #21aa93;
+                color:$blanco;
+            }
+        }
+
+        &.terminado{
+            opacity: 0.4;
+
+            p{
+                text-decoration:line-through;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .tareas{
+        padding: 1rem;
+
+        p{
+            width: 70%;
+        }
+    }
+}
