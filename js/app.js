@@ -34,7 +34,12 @@ function eventListeners(){
 function cantidadTareas(){
     const nTareas = document.querySelectorAll('.item').length;
     const nTerminados = document.querySelectorAll('.terminado').length;
-   
+    const conteoTotal = nTareas - nTerminados;
+
+    const numero = document.querySelector('.conteo__tareas h4 span');
+    numero.innerText = conteoTotal;
+    
+       
     if(nTareas < 1 || nTerminados == nTareas){
         aviso = document.createElement('h2');
         aviso.innerHTML = `No tienes Tareas pendientes <i class="material-icons">thumb_up_alt</i>`;
@@ -57,6 +62,7 @@ function agregarTarea(e){
     aviso.remove();
     //agrego tarea
     listaTareas.appendChild(nuevaTarea);
+    cantidadTareas();    
 }
 
 //Borrar Tarea
